@@ -31,4 +31,4 @@ def va_speak(what: str):
     time.sleep((len(audio) / sample_rate) + 0.5)
     sd.stop()
 
-va_speak(example_text)
+# va_speak(example_text)

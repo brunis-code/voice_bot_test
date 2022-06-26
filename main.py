@@ -1,21 +1,22 @@
 import config
+import nlu_bot
 import stt
 import tts
-import nlu_bot
 from fuzzywuzzy import fuzz
 import datetime
 from num2t4ru import num2text
 import webbrowser
 import random
 import numpy
-
+nlu_longpoll_bot = nlu_bot.NLULongPollBot()
 print(f"{config.VA_NAME} (v{config.VA_VER}) начал свою работу ...")
 
 def va_respond(voice: str):
 
     print(voice)
     if voice != '':
-        tts.va_speak(nlu_bot.get_bot_response(voice))
+       tts.va_speak(nlu_longpoll_bot.get_bot_response(voice))
+    #     tts.va_speak(voice)
     # if voice.startswith(config.VA_ALIAS):
     #     # обращаются к ассистенту
     #     cmd = recognize_cmd(filter_cmd(voice))
